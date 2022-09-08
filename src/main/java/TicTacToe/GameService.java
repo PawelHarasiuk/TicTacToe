@@ -9,7 +9,7 @@ import org.springframework.stereotype.Service;
 
 /*
  to do:
- - delete GameController?
+ - delete GameController
  - move game to the centre
  */
 
