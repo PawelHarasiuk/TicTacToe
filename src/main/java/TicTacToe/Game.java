@@ -5,7 +5,6 @@ import com.vaadin.flow.component.html.H1;
 import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 import com.vaadin.flow.router.Route;
-import org.springframework.stereotype.Service;
 
 /*
  to do:
@@ -14,8 +13,7 @@ import org.springframework.stereotype.Service;
  */
 
 @Route("")
-@Service
-public class GameService extends VerticalLayout {
+public class Game extends VerticalLayout {
 
     private boolean xTurn;
     private final H1 text = new H1("TicTacToe");
@@ -25,7 +23,7 @@ public class GameService extends VerticalLayout {
     private final HorizontalLayout l2 = new HorizontalLayout();
     private final HorizontalLayout l3 = new HorizontalLayout();
 
-    public GameService(){
+    public Game(){
         buttons = new Button[9];
         play();
     }
@@ -69,7 +67,8 @@ public class GameService extends VerticalLayout {
                 b.setText("");
                 b.setEnabled(true);
             }
-            text.setText("aaa");
+            xTurn=false;
+            text.setText("TicTacToe");
         });
     }
 
