@@ -1,2 +1,2 @@
 # TicTacToe
-TicTacToe Project
+TicTacToe Game in Spring Boot
