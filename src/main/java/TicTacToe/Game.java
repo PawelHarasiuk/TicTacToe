@@ -6,26 +6,19 @@ import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 import com.vaadin.flow.router.Route;
 
-/*
- to do:
- - delete GameController
- - move game to the centre
- */
-
 @Route("")
 public class Game extends VerticalLayout {
 
-    private boolean xTurn;
+    private int turn;
     private final H1 text = new H1("TicTacToe");
+    private final Button[] buttons = new Button[9];
     private Button bReset;
-    private final Button[] buttons;
     private final HorizontalLayout l1 = new HorizontalLayout();
     private final HorizontalLayout l2 = new HorizontalLayout();
     private final HorizontalLayout l3 = new HorizontalLayout();
 
     public Game(){
-        buttons = new Button[9];
-        play();
+       play();
     }
 
     public void createButtons(){
@@ -56,9 +49,10 @@ public class Game extends VerticalLayout {
         for (Button b : buttons) {
             b.addClickListener(buttonClickEvent -> {
                 b.setEnabled(false);
-                b.setText(xTurn?"X":"O");
+                b.setText(turn%2==0?"X":"O");
+                text.setText(turn%2==0?"O turn":"X turn");
                 checkIfGameIsOver();
-                xTurn=!xTurn;
+                turn++;
             });
         }
 
@@ -67,9 +61,15 @@ public class Game extends VerticalLayout {
                 b.setText("");
                 b.setEnabled(true);
             }
-            xTurn=false;
             text.setText("TicTacToe");
+            turn=0;
         });
+    }
+
+    public void setButtonsEnabled(){
+        for (Button b: buttons) {
+            b.setEnabled(false);
+        }
     }
 
     public void checkIfGameIsOver(){
@@ -86,14 +86,15 @@ public class Game extends VerticalLayout {
                 default -> null;
             };
 
-            //X winner
             if (line.equals("XXX")) {
                 text.setText("X won!");
+                setButtonsEnabled();
             }
-
-            //O winner
             else if (line.equals("OOO")) {
                 text.setText("O won!");
+                setButtonsEnabled();
+            } else if (turn>=8){
+                text.setText("Draw");
             }
         }
     }
