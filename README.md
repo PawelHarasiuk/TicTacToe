@@ -23,7 +23,7 @@ To run the TicTacToe game:
 
 <img width="300" alt="interface" src="https://github.com/PawelHarasiuk/TicTacToe/assets/96013656/e1a0dda5-736d-4640-98fb-b7e63883d4bb">
 
-
+<br><br>
 
 - The game is played on a 3x3 grid.
 - Player X always goes first and Player O follows.
