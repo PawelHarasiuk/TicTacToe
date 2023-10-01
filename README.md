@@ -4,9 +4,7 @@ This is a simple TicTacToe game implemented in Java using the Vaadin framework.
 
 ## Project Structure
 
-- **Game.java**: Contains the main logic and UI components for the TicTacToe game.
-- **index.html**: The main HTML file for the Vaadin application.
-- **styles.css**: CSS file for styling the Vaadin components.
+Game.java**: Contains the main logic and UI components for the TicTacToe game.
 
 ## How to Run
 
@@ -18,17 +16,16 @@ To run the TicTacToe game:
 4. Run the `Game` class.
 
 ## How to Play
+- The game is played on a 3x3 grid.
+- Player X always goes first and Player O follows.
+- If all cells are filled and no player has three marks in a row, the game is a draw.
+- Click on an empty cell to place your marker (X or O).
+- The first player to get three of their marks in a row (horizontally, vertically, or diagonally) wins the game.
 
 ### Game Interface
 
 <img width="300" alt="interface" src="https://github.com/PawelHarasiuk/TicTacToe/assets/96013656/e1a0dda5-736d-4640-98fb-b7e63883d4bb">
 
 <br><br>
-
-- The game is played on a 3x3 grid.
-- Player X always goes first and Player O follows.
-- Click on an empty cell to place your marker (X or O).
-- The first player to get three of their marks in a row (horizontally, vertically, or diagonally) wins the game.
-- If all cells are filled and no player has three marks in a row, the game is a draw.
 
 Enjoy the game!
